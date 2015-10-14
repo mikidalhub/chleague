@@ -1,0 +1,13 @@
+<h1>Standings</h1>
+<div class="standnear">
+
+  <users></users>
+  <div class="stand-matches">
+    <h4 class="selwinner" ng-show="!loading">{{user.firstName}} {{ user.lastName}} {{winner}}</h4>
+
+    <div class="placeloader" ng-show="loading"><span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span>
+    </div>
+
+    <usermatches></usermatches>
+  </div>
+</div>

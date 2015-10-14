@@ -1,0 +1,551 @@
+body {
+  /*font-family: "Times New Roman", Georgia, Serif;*/
+  font-size: 15px;
+  line-height: 1.42857143;
+  color: #EBEBEB;
+  background-color: #2B3E50;
+}
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+body {
+  padding: 0;
+}
+
+.nav {
+  margin-top: 2px;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+  /*border-bottom: 1px solid #e5e5e5;*/
+  margin-bottom: 10px;
+  /*margin-top: 10px;*/
+  width: 750px
+}
+
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+  line-height: 40px;
+  /*padding: 5px;*/
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  /*border-top: 1px solid #e5e5e5;*/
+}
+
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.jumbotron .btn {
+  font-size: 21px;
+  padding: 14px 24px;
+}
+
+/* Supporting marketing content */
+.marketing {
+  margin: 40px 0;
+}
+
+.marketing p + h4 {
+  margin-top: 28px;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}
+
+.form-signin {
+  max-width: 280px;
+  padding: 15px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.form-signin .form-signin-heading, .form-signin {
+  margin-bottom: 10px;
+}
+
+.form-signin .form-control {
+  position: relative;
+  font-size: 16px;
+  height: auto;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+
+.form-signin input[type="text"] {
+  /*margin-bottom: -1px;*/
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: none;
+  border-left-style: solid;
+  /*border-color: #000;*/
+}
+
+.form-signin input[type="password"] {
+  /*margin-bottom: 10px;*/
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-top-style: none;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left-style: solid;
+  /*border-color: rgb(0,0,0);*/
+  /*border-top:1px solid rgba(0,0,0,0.08);*/
+}
+
+.form-signin-heading {
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.main-alert {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.alert-hidden {
+  visibility: hidden;
+}
+
+.ui-view-container {
+  poistion: relative;
+}
+
+[ui-view].ng-enter,
+[ui-view].ng-leave {
+
+}
+
+table, th, td {
+  border: 1px solid white;
+  border-collapse: collapse;
+  padding: 20px;
+  color: grey;
+}
+
+table tr:nth-child(odd) {
+  background-color: #f1f1f1;
+}
+
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+
+.winner-team {
+  text-align: right;
+  margin-top: 19px;
+}
+
+div.own-matches {
+  color: black;
+  width: 550px;
+  float: left;
+}
+
+div.own-matches-header {
+  color: white;
+  width: 550px;
+  float: left;
+}
+
+div.own-matches:nth-child(odd) {
+  background-color: #f1f1f1;
+}
+
+div.own-matches:nth-child(even) {
+  background-color: #ffffff;
+}
+
+.score-place {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  font-size: 15pt;
+  font-weight: bold;
+  color: grey;
+}
+
+.team-name {
+  text-align: center;
+  font-weight: bold;
+  margin-left: -49px;
+  width: 200px !important;
+}
+.team-name-right{
+  text-align: center;
+  font-weight: bold;
+  margin-left: -30px;
+  width: 200px !important;
+}
+.tip-inputs{
+
+}
+.tip-area-out {
+  //margin-left: -15px;
+}
+.team2-container{
+  text-align: right;
+}
+.btn-sm {
+  margin-left: 72px;
+  margin-top: 5px;
+}
+
+#tiparea {
+  margin-top: 8px
+}
+
+div.highlighted-red {
+  background-color: lightcoral;
+  text-align: center;
+  margin-left: auto;
+  font-weight: bold;
+  color: grey;
+  margin-right: auto;
+  width: 9em;
+  padding-left: 25px;
+}
+.match-boxes{
+
+}
+div.highlighted {
+  background-color: lightgreen;
+  text-align: center;
+  margin-left: auto;
+  font-weight: bold;
+  color: grey;
+  margin-right: auto;
+  width: 9em;
+  /*padding-left: 25px;*/
+  border-radius: 5px;
+}
+
+.highlighted p {
+  /*margin-left: 10px*/
+}
+
+.score-original {
+  text-align: center;
+  /*font-style: italic;*/
+  font-size: 10pt;
+  font-weight: bold;
+  color: grey;
+  margin-left: 3px
+}
+
+.date-venue-row {
+  margin-bottom: 8px
+}
+
+.date-venue {
+  font-weight: bold;
+  font-size: 9pt;
+  color: grey;
+  margin-bottom: -10px;
+  width: 250px !important;
+  /*margin-left: 20px;*/
+}
+
+.match-container {
+  padding-top: 10px;
+}
+
+.proba {
+  background-color: lightblue;
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.save-btn {
+  margin-top: 8px;
+  margin-left: 7px;
+}
+
+.original-score {
+  margin-top: -20px;
+  font-weight: bold;
+  /*font-style: italic;*/
+}
+
+.guessed-score {
+  margin-top: 20px;
+  font-size: 20pt;
+  width: 205px;
+}
+
+.scoreplace {
+  width: 40px;
+  height: 42px;
+  color: grey;
+  text-align: center;
+  font-weight: bold;
+}
+
+#standings tr td {
+
+  border-top: 1px solid #2B3E50;
+  border-bottom: 1px solid #2B3E50;
+  font-size: 12pt;
+}
+
+#standings tr td:last-child {
+  font-size: 14pt;
+  font-weight: bold;
+}
+
+.activebg {
+  background-color: #1E90FF;
+}
+
+.idcolor {
+  color: white;
+  font-size: 14pt;
+  font-weight: bold;
+}
+
+.hoverTable tr:hover {
+  background-color: #1E90FF;
+  cursor: pointer;
+}
+
+.name {
+  color: black;
+  font-weight: bold;
+}
+
+.standnear {
+  display: inline-block;
+  width: 850px;
+}
+
+.stand-users {
+  float: left
+}
+
+.stand-matches {
+  margin-top: -57px;
+  float: right;
+  color: white;
+  width: 550px
+}
+
+.logoimg {
+  margin-top: -67px;
+  margin-left: -75px;
+}
+
+.selwinner {
+  margin-top: 27px
+}
+
+.headline {
+  float: left;
+}
+
+.mywinner {
+  margin-top: 10px;
+  margin-left: 20px;
+  float: left
+}
+
+.matchvenue {
+  position: absolute;
+  font-size: 10pt;
+  width: 250px;
+  text-align: left;
+  margin-left: 8px;
+  font-weight: normal
+}
+
+.matchvenue-stand {
+  position: absolute;
+  font-size: 10pt;
+  width: 250px;
+  text-align: left;
+  margin-left: 42px;
+  font-weight: normal
+}
+
+.inactive {
+  background: #dddddd;
+}
+
+.notdisplayed {
+  /*display: none;*/
+}
+
+.alertevent {
+  background-color: red;
+}
+
+.nicedate {
+  position: absolute;
+  margin-left: 10px;
+  font-size: 9pt;
+  font-weight: bold
+}
+
+.nicedate-stand {
+  position: absolute;
+  font-size: 9pt;
+  font-weight: bold
+}
+
+.team1, .team2 {
+  color: black;
+  font-weight: bold;
+  font-size: 12pt;
+}
+
+.team1 {
+  margin-left: 10px;
+}
+
+.team2 {
+  margin-right: 10px;
+}
+
+.team1s, .team2s {
+  color: black;
+  font-weight: bold;
+  font-size: 12pt;
+}
+
+#own-matches-table {
+  width: 500px;
+  float: left;
+}
+
+.bggreen {
+  color: #00BF30;
+}
+
+.bgorange {
+  color: #FFAA33;
+}
+
+.bgred {
+  color: #FF0000;
+}
+
+.ownform {
+  width: 30px
+}
+
+.ownbtn {
+  float: right
+}
+
+.yellow {
+  color: yellow;
+}
+
+.fade-in-out {
+  transition: 1s linear all;
+  opacity: 1;
+}
+
+.fade-in-out.ng-hide {
+  opacity: 0;
+}
+
+.ng-move {
+  -webkit-transition: 1s;
+  transition: 1s;
+  background: gold;
+}
+
+.ng-move-active {
+  background: #fff;
+}
+
+.header-cl {
+  margin-left: 8px
+}
+.glyphicon-refresh-animate {
+  -animation: spin .7s infinite linear;
+  -webkit-animation: spin2 .7s infinite linear;
+}
+
+@-webkit-keyframes spin2 {
+  from { -webkit-transform: rotate(0deg);}
+  to { -webkit-transform: rotate(360deg);}
+}
+
+@keyframes spin {
+  from { transform: scale(1) rotate(0deg);}
+  to { transform: scale(1) rotate(360deg);}
+}
+.placeloader{
+  margin: auto;
+  position: relative;
+  top: 200px; left: 250px; bottom: 0; right: 0;
+}
+.bg-blue{
+  background-color: #1E90FF;
+}
+.color-white{
+  color: #fff;
+}
+
+.user-tip-area{
+  margin-left: -30px;
+}

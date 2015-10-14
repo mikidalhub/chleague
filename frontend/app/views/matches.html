@@ -1,0 +1,125 @@
+<div class="row own-matches-header">
+  <div class="col-md-4"><h3>My matches</h3>
+  </div>
+  <div class="col-md-8 winner-team"><h4>{{winner}}</h4>
+  </div>
+</div>
+<div class="container-fluid own-matches" ng-repeat="match in matches"
+     ng-class="{'disabled' : match.tipable, 'fade-inout' : match.fadeinout}">
+  <div class="row score-line-row">
+    <div class="col-md-12 match-container" ng-class="{}">
+      <div ng-show="tipsuccess && matchid == match.id" class="fade-in-out highlighted" ng-app="">
+        <p>Saved!</p>
+      </div>
+      <div ng-show="!tipsuccess && matchid == match.id" class="fade-in-out highlighted-red" ng-app="">
+        <p>Failed!</p>
+      </div>
+      <div class="row match-boxes">
+        <div class="col-md-4">
+          <div class="row">
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-4">
+              <div class="row">
+                <div class="col-md-12">
+                  <img width="72" height="72"
+                       src='http://premium.smartsoft.ro:8090/SmartBet/img_big/{{match.team1}}.png'>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 team-name">
+                  <p>
+                    {{ match.team1n}}
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+            </div>
+          </div>
+          <div class="row date-venue-row">
+            <div class="col-md-6 date-venue">
+              <p>{{ match.nicedate}}</p>
+            </div>
+            <div class="col-md-6 date-venue">
+              <p>{{ match.venue}} </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 tip-area-out">
+          <div class="row tip-inputs">
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-4 score-original">
+              {{ match.team1Goals}} - {{ match.team2Goals}}
+            </div>
+            <div class="col-md-4">
+            </div>
+          </div>
+          <div class="row user-tip-area">
+            <form id="tiparea" ng-submit="saveUsersTips(match,$index)" name="tip" novalidate>
+              <div class="col-md-12">
+                <div class="row">
+                  <div class="col-md-3 score-line">
+                  </div>
+                  <div class="col-md-3">
+                    <input ng-change="checkTipChange(match)" ng-class="{'bggreen' : match.fullhit,
+                                                                                                                'bgorange' : match.halfhit,
+                                                                                                                'bgred' : match.nohit,
+                                                                                                                }"
+                           name="tipone" class="score-place" readonly maxlength="1"
+                           tooltip="{{form.tipone.$valid ? '' : 'Numbers please!'}}" tooltip-trigger="focus"
+                           ng-class="{{!match.tipable}}?'inactive':''"
+                           ng-model="match.tip1Goals" value='{{match.tip1Goals}}' ng-readonly="!match.tipable">
+                  </div>
+                  <div class="col-md-3 score-line">
+                    <input ng-change="checkValue(match)"
+                           ng-class="{  'bggreen' : match.fullhit,
+                                                                                'bgorange' : match.halfhit,
+                                                                                'bgred' : match.nohit,
+                                                                                }"
+                           name="tiptwo" readonly maxlength="1"
+                           tooltip="{{form.tiptwo.$valid ? '' : 'Numbers please!'}}" tooltip-trigger="focus"
+                           ng-class="{{wrongvalue}}?'alertevent':''"
+                           ng-class="{{!match.tipable}}?'inactive':''"
+                           class="score-place" ng-class="{{!match.tipable}}?'inactive':''" ng-model="match.tip2Goals"
+                           value='{{match.tip2Goals}}' ng-readonly="!match.tipable">
+                  </div>
+                  <div class="col-md-3 score-line">
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <button type="submit" ng-disabled="{{!match.tipable}}" ng-class="{{!match.tipable}}?'disabled':''"
+                        class="btn btn-primary btn-sm" value="Save">
+                  Save
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="row">
+            <div class="col-md-8 team2-container">
+              <div class="row">
+                <div class="col-md-12">
+                  <img width="72" height="72"
+                       src='http://premium.smartsoft.ro:8090/SmartBet/img_big/{{match.team2}}.png'>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 team-name-right">
+                  <p>
+                    {{ match.team2n}}
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

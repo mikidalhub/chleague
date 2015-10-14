@@ -1,0 +1,13 @@
+<div class="stand-users">
+  <table id="standings" class="hoverTable">
+    <tr ng-repeat="user in users" data-ng-click="getUserMatches(user.id, user.firstName, user.lastName)" >
+      <td bgcolor="#1E90FF" class="idcolor">
+        <span>{{ user.id}}</span>
+      </td>
+      <td class="name" ng-class="{'bg-blue' : userid && user.id == userid, 'color-white': userid && user.id == userid}">
+        {{ user.firstName}} {{ user.lastName}}
+      </td>
+      <td ng-class="{'bg-blue' : userid && user.id == userid, 'color-white': userid && user.id == userid}">{{user.points}}</td>
+    </tr>
+  </table>
+</div>

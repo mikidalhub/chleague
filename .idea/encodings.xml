@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/frontend/app/scripts/app.config.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/frontend/app/scripts/app.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/frontend/app/scripts/controllers/loginCtrl.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/frontend/app/scripts/controllers/matchesCtrl.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/frontend/app/scripts/controllers/standingsCtrl.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/frontend/app/scripts/services/reshandler.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/frontend/app/scripts/services/resourceserv.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/frontend/app/scripts/services/tips.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/frontend/app/styles/main.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/frontend/app/views/header.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/frontend/app/views/login.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/frontend/app/views/matches.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/frontend/app/views/standings.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/frontend/app/views/usermatches.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/frontend/app/views/users.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/frontend/package.json" charset="UTF-8" />
+  </component>
+</project>

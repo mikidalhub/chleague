@@ -1,0 +1,105 @@
+<div class="container-fluid own-matches" ng-repeat="match in matches" ng-show="!loading"
+     ng-class="{'disabled' : match.tipable, 'fade-inout' : match.fadeinout}">
+  <div class="row score-line-row">
+    <div class="col-md-12 match-container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="row">
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-4">
+              <div class="row">
+                <div class="col-md-12 team-image">
+                  <img width="72" height="72"
+                       src='http://premium.smartsoft.ro:8090/SmartBet/img_big/{{match.team1}}.png'>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 team-name">
+                  <p>
+                    {{ match.team1n}}
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+            </div>
+          </div>
+          <div class="row date-venue-row">
+            <div class="col-md-6 date-venue">
+              <p>{{ match.nicedate}}</p>
+            </div>
+            <div class="col-md-6 date-venue">
+              <p>{{ match.venue}} </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 tip-area-out">
+          <div class="row tip-inputs">
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-4 score-original">
+              {{ match.team1Goals}} - {{ match.team2Goals}}
+            </div>
+            <div class="col-md-4">
+            </div>
+          </div>
+          <div class="row user-tip-area">
+            <form id="tiparea" ng-submit="saveUsersTips(match,$index)" name="tip" novalidate>
+              <div class="col-md-12">
+                <div class="row">
+                  <div class="col-md-3 score-line">
+                  </div>
+                  <div class="col-md-3">
+                    <input  ng-class="{  'bggreen' : match.fullhit,
+                                             'bgorange' : match.halfhit,
+                                             'bgred' : match.nohit,
+                                             }"
+                            name="tipone" class="score-place" readonly
+                            ng-model="match.tip1Goals" value='{{match.tip1Goals}}'>
+                  </div>
+                  <div class="col-md-3 score-line">
+                    <input
+                      ng-class="{   'bggreen' : match.fullhit,
+                                             'bgorange' : match.halfhit,
+                                             'bgred' : match.nohit,
+                                             }"
+                      name="tiptwo" readonly
+                      class="score-place"
+                      ng-model="match.tip2Goals" value='{{match.tip2Goals}}'>
+                  </div>
+                  <div class="col-md-3 score-line">
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="row">
+            <div class="col-md-8 team2-container">
+              <div class="row">
+                <div class="col-md-12">
+                  <img width="72" height="72"
+                       src='http://premium.smartsoft.ro:8090/SmartBet/img_big/{{match.team2}}.png'>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 team-name-right">
+                  <p>
+                    {{ match.team2n}}
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<form ng-submit="submit()" name="login" class="form-signin" novalidate>
+  <h1 class="form-signin-heading text-muted">Login</h1>
+  <input name="username" ng-model="username" type="text" class="form-control" placeholder="User name" required
+         autofocus="">
+  <input name="password" ng-model="password" type="password" class="form-control" placeholder="Password" required>
+  <button class="btn btn-lg btn-primary btn-block" type="submit" value="Login">
+    Login
+  </button>
+  <br/>
+  <a class="text-muted pull-right" ui-sref="register" hidden>Create account</a>
+</form>
+
