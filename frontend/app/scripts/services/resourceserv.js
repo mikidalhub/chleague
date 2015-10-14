@@ -28,22 +28,7 @@ angular.module('nodeAngularOauthApp')
 
     var resourceServ =  {
       login: function (user) {
-            return $http({
-              url: constants.login + user.username + '&' + 'password=' + user.password,
-              method:"POST",
-              headers: {
-                //'Authorization': 'Basic dGVzdDp0ZXN0',
-                //'Content-Type': 'application/x-www-form-urlencoded',
-                'Access-Control-Allow-Origin': '*',
-                'Access-Control-Allow-Credentials': 'true',
-                'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE',
-                'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-              },
-              data: {
-                'Code': 'test data'
-              }
-            });
-        //return $http.post(constants.login + user.username + '&' + 'password=' + user.password);
+        return $http.post(constants.login + user.username + '&' + 'password=' + user.password);
       },
       validateSession: function () {
         return $http.post(constants.validate);
