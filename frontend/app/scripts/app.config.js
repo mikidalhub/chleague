@@ -36,8 +36,8 @@ angular.module('nodeAngularOauthApp').config(function ($urlRouterProvider, $stat
                 controller: 'ChangepasswordCtrl'
             });
 
-    $httpProvider.interceptors.push('authInterceptor');
-})
+        $httpProvider.interceptors.push('authInterceptor');
+    })
 //        .constant('API_URL', 'http://192.168.0.102:3000/')
         .constant('API_URL', 'http://192.168.229.103:3000/')
         .constant('UNAUTHORIZED', 'Unauthorized access! Please Log In!')

@@ -39,12 +39,15 @@ angular.module('nodeAngularOauthApp')
               return{
                 restrict:'E',
                 templateUrl:'views/users.html',
-                contorller:'standingsCtrl'
+                contorller:'standingsCtrl',
+                replace:true,
               }
         }).directive('usermatches', function(){
             return{
-              restrict:'E',
+              restrict:'E', //where E means element, A means attribute C means directive
               templateUrl:'views/usermatches.html',
-              contorller:'matchesCtrl'
+              contorller:'matchesCtrl',
+              replace:true,
+              transclude: false,
             }
           });
