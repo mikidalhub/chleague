@@ -1,4 +1,4 @@
 'use strict';
 
 angular
-        .module('nodeAngularOauthApp', ['ui.router', 'ngAnimate', 'angular-loading-bar']);
+        .module('nodeAngularOauthApp', ['ui.router', 'ngAnimate', 'ngResource']);

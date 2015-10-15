@@ -34,6 +34,11 @@ angular.module('nodeAngularOauthApp').config(function ($urlRouterProvider, $stat
                 url: '/changepassword',
                 templateUrl: 'views/changepassword.html',
                 controller: 'ChangepasswordCtrl'
+            })
+            .state('weather', {
+              url: '/weather',
+              templateUrl: 'views/weather.html',
+              controller: 'weatherCtrl'
             });
 
         $httpProvider.interceptors.push('authInterceptor');
