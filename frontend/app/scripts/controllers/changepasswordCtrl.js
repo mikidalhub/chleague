@@ -2,14 +2,13 @@
 
 angular.module('nodeAngularOauthApp')
         .controller('ChangepasswordCtrl', function ($http, alert, authToken, changePasswordService,
-                                                            $scope, $state, API_URL, UNAUTHORIZED, general) {
+                                                            $scope, $state, API_URL, UNAUTHORIZED) {
             var sessionId = authToken.getSessionId();
             if (!sessionId) {
                 alert('warning', UNAUTHORIZED);
                 $state.go('login');
             }
             $scope.submit = function () {
-                var promise;
                 var url = API_URL + 'changepassword';
                 var user = {
                     oldpassword: $scope.oldpassword,

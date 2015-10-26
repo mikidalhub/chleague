@@ -10,9 +10,9 @@
 angular.module('nodeAngularOauthApp')
   .factory('tips', function ($http, API_URL, alert, authToken, general, observerService) {
 
-    var urlSetUsersTipUrl = API_URL + 'setusertips';
+       var urlSetUsersTipUrl = API_URL + 'setusertips';
        var tips = {
-                set: function (match,sessionId, index) {
+                set: function (match,sessionId) {
                         var user = {
                            'sessionId' : sessionId,
                            'matchid' : match.id,
@@ -26,30 +26,24 @@ angular.module('nodeAngularOauthApp')
                              matchDateTime = matchDate.getTime();
                              dateOffset = Number(authToken.getDateTimeOffset());
                              nowWithOffset = now.getTime() + dateOffset;
-                        } catch(err) {
-                            //console.log('date error' + err.message);
-                            return;
-                        }
-                        if(nowWithOffset < matchDateTime){ //if now < start date of the match
+                        } catch(err) {}
+                        //check if the tip is allowable or not
+                        if(nowWithOffset && matchDateTime && nowWithOffset < matchDateTime){ //if now < start date of the match
+                            var obj = {}, args = {};
                             promise = $http.post(urlSetUsersTipUrl, user);
                             promise.then(function(result) {
-                                var obj = general.jsonParse(result.data);
+                                obj = general.jsonParse(result.data);
                                 if(obj.success){
-                                    var args = {'id' : match.id, 'success' : true}
-                                    //observerService.triggerTipObserverEvents(args);
+                                    args = {'id' : match.id, 'success' : true };
+                                    observerService.triggerTipObserverEvents(args);
                                 }
                             }),function(err){
-                                var args = {'id' : match.id, 'success' : false}
+                                args = {'id' : match.id, 'success' : false};
                                 observerService.triggerTipObserverEvents(args);
                                 alert('warning', 'Unable to set tips! Error occured!' + err.message);
                             };
                         }else{
-                            //console.log('not allowed!');
                             alert('warning', 'The match has already been started! You must NOT tip during the match!');
-                        }
-                        return {
-                          'id' : match.id,
-                          'success' : true
                         }
                     }
             };

@@ -14,7 +14,7 @@ angular.module('nodeAngularOauthApp').config(function ($urlRouterProvider, $stat
             .state('login', {
                 url: '/login',
                 templateUrl: 'views/login.html',
-                controller: 'LoginCtrl'
+                controller: 'LoginCtrl',
             })
             .state('logout', {
                 url: '/logout',
@@ -45,6 +45,6 @@ angular.module('nodeAngularOauthApp').config(function ($urlRouterProvider, $stat
     })
 //        .constant('API_URL', 'http://192.168.0.102:3000/')
         .constant('API_URL', 'http://192.168.229.103:3000/')
-        .constant('UNAUTHORIZED', 'Unauthorized access! Please Log In!')
+        .constant('UNAUTHORIZED', 'Unauthorized access! Please Log In!');
 //        .constant('API_URL', 'http://192.168.230.198:8080/WorldCup/');
 

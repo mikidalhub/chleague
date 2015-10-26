@@ -15,7 +15,7 @@ angular.module('nodeAngularOauthApp')
                     var matchesResultObject = {};
                     matchesResultObject = general.jsonParse(matches);
                     if (matchesResultObject.success) {
-                        var countries = [], matchesArr = {},  resObj;
+                        var countries = [],  resObj = {};
                         countries = authToken.getCountries();
                         if(general.isEmpty(countries)){
                             $http.post(API_URL + 'countries', user).success(function (result) {
@@ -71,7 +71,7 @@ angular.module('nodeAngularOauthApp')
                     var winnertext;
                     var matchesArr = matchesResultObject.matches;
                     var winner = authToken.getWinner();
-                    if(winner !== "undefined" && winner !== null && winner != "0") {
+                    if(winner !== "undefined" && winner !== null && winner !== "0") {
                         winnertext = 'My winner team is ' + winner;
                     } else {
                         winnertext = 'I have not selected any winner team! :(';
@@ -103,7 +103,7 @@ angular.module('nodeAngularOauthApp')
                 var winnertext;
                 var matchesArr = matchesResultObject.matches;
                 var winner = authToken.getWinner();
-                if(winner.length == 1 || !isNaN(Number(winner))){
+                if(winner.length === 1 || !isNaN(Number(winner))){
                     winner = general.getWinnerFromArray(countries);
                 }
                 if(winner !== "undefined" && winner !== null) {
@@ -117,7 +117,7 @@ angular.module('nodeAngularOauthApp')
                 };
         }
         function searchAndReplaceObjectElements(countries, matchesResultObject){
-                angular.forEach(matchesResultObject.matches, function (value, key) {
+                angular.forEach(matchesResultObject.matches, function (value, keyparam) { //keyparam instead of key
                       var ccode = value.team1;
                       var ccode2 = value.team2;
                       for(var key in countries){

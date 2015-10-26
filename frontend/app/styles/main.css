@@ -190,7 +190,6 @@ table tr:nth-child(even) {
   text-align: right;
   margin-top: 19px;
 }
-
 div.own-matches {
   color: black;
   width: 550px;
@@ -373,7 +372,7 @@ div.highlighted {
 
 .standnear {
   display: inline-block;
-  width: 850px;
+  width: 880px;
 }
 
 .stand-users {

@@ -1,4 +1,5 @@
-var serverChunk = "http://premium.smartsoft.ro:8090/SmartBet/";
+var serverChunk = "http://www.smartbet.info/api/";
+//var serverChunk = "http://premium.smartsoft.ro:8090/SmartBet/";
 //var serverChunk = "http://192.168.230.198:8080/WorldCup/";
 exports.getConstant = function (key) {
     var constants = {

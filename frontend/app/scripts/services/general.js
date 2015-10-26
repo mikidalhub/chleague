@@ -17,10 +17,10 @@ angular.module('nodeAngularOauthApp')
                     }catch(err){
                         console.log('error on json parse');
                     }
-                    return obj;  
+                    return obj;
                 },
-                getCountries: function(){                                    
-                   
+                getCountries: function(){
+
                 },
                 isEmpty : function (obj) {
                     var hasOwnProperty = Object.prototype.hasOwnProperty;
@@ -36,7 +36,7 @@ angular.module('nodeAngularOauthApp')
                     // Note that this doesn't handle
                     // toString and valueOf enumeration bugs in IE < 9
                     for (var key in obj) {
-                        if (hasOwnProperty.call(obj, key)) {return false;} 
+                        if (hasOwnProperty.call(obj, key)) {return false;}
                     }
 
                     return true;
@@ -46,15 +46,15 @@ angular.module('nodeAngularOauthApp')
                             var now = new Date();
                             var offset;
                             if(currentTimeObj.success){
-                                offset = now.getTime() - currentTimeObj.time;                        
+                                offset = now.getTime() - currentTimeObj.time;
                                 authToken.setDateTimeOffset(offset);
                             }else{
                                 //console.log('Unabel to get current time');
-                            }    
+                            }
                 },
                 getWinnerFromArray: function (countriesObj, user) {
                             var winner, assocCountries ={};
-                            angular.forEach(countriesObj, function (value, key) {                                                                            
+                            angular.forEach(countriesObj, function (value, key) {
                                 assocCountries[value.cod] = value.name;
                                 if(user){
                                     if(value.id === user.winnerId){
@@ -62,11 +62,11 @@ angular.module('nodeAngularOauthApp')
                                         return winner;
                                     }
                                 }
-                            });   
+                            });
                 },
                 handleCountries: function (countriesObj, user) {
-                            var assocCountries = {}, winner;                                                                                
-                            angular.forEach(countriesObj.countries, function (value, key) {                                                                            
+                            var assocCountries = {}, winner;
+                            angular.forEach(countriesObj.countries, function (value, key) {
                                 assocCountries[value.cod] = value.name;
                                 if(user){
                                     if(value.id === Number(user.winnerId)){
@@ -74,13 +74,16 @@ angular.module('nodeAngularOauthApp')
                                         authToken.setWinner(value.name);//save selected winner into local storage
                                     }
                                 }
-                            });                            
+                            });
                             authToken.setCountries(assocCountries);
                             return {
                                 'countries':assocCountries,
                                 'winner':winner
                             };
-                }, 
+                },
+                IsNumeric: function(input){
+                    return isNaN(input);
+                }
             };
             return general;
   });

@@ -1,53 +1,56 @@
 'use strict';
-
+/**
+ * @ngdoc controller
+ * @name nodeAngularOauthApp.StandingsCtrl
+ * @description
+ * # StandingsCtrl
+ * Factory in the nodeAngularOauthApp.
+ */
 angular.module('nodeAngularOauthApp')
-        .controller('StandingsCtrl', function ($http, alert, authToken, $scope, $state, API_URL, UNAUTHORIZED, resHandler) {
-            var url = API_URL + 'users';
-            var userMatchesUrl = API_URL + 'usermatches';
+        .controller('StandingsCtrl', function ($http, alert, authToken, $scope,
+                                               $state, API_URL, UNAUTHORIZED, resHandler, standingService) {
+
             var sessionId = authToken.getSessionId();
-            var promise, promiseUsers;
             if (!sessionId) {
                 alert('warning', UNAUTHORIZED);
                 $state.go('login');
             }
             var user = {
                 sessionId: sessionId,
+            };            
+            $scope.getUserMatches = function(userid, firstname, lastname){
+                  $scope.loading = true;
+                  $scope.userid = userid;
+                  user.userId  = userid;
+                  //get the selected user's matches
+                  standingService.getUserMatches(userid, firstname, lastname, user);
             };
+            //get users initially and appear in a list
+            standingService.getUsers(user);
 
-            $scope.getUserMatches = function(userid,firstname, lastname){
-                user.userId = userid;
-                promise = $http.post(userMatchesUrl,user);
-                $scope.loading = true;
-                $scope.userid = userid;
-                promise.then(function(result) {
-                  var resobj = resHandler.getUserMatches(result.data,firstname, lastname);
-                  $scope.matches = resobj.matches;
-                  $scope.winner = resobj.winner;
-                  $scope.loading = false;
-                }),function(err){
-                    alert('warning', 'Unable to get matches! ' + err.message);
-                };
-            };
-            promiseUsers = $http.post(url,user);
-            promiseUsers.then(function(result) {
-              var resobj = resHandler.getUsers(result.data);
-              $scope.users = resobj.users;
-            }),function(err){
-                alert('warning', 'Unable to get matches! ' + err.message);
-            };
+            //waiting for the users list results
+            $scope.$on('usersresultevent', function(event,args) {
+                  $scope.users = args.users;
+            });
+            //waiting for the selected users matches
+            $scope.$on('usermatchesresultevent', function(event,args) {
+                  $scope.matches = args.matches;
+                  $scope.winner = args.winner;
+                  $scope.loading = args.loading;
+            });
+
         }).directive('users', function(){
               return{
                 restrict:'E',
                 templateUrl:'views/users.html',
-                contorller:'standingsCtrl',
                 replace:true,
-              }
+                transclude: false,
+              };
         }).directive('usermatches', function(){
-            return{
-              restrict:'E', //where E means element, A means attribute C means directive
-              templateUrl:'views/usermatches.html',
-              contorller:'matchesCtrl',
-              replace:true,
-              transclude: false,
-            }
-          });
+              return{
+                restrict:'E', //where E means element, A means attribute C means directive
+                templateUrl:'views/usermatches.html',
+                replace:true,
+                transclude: false,
+              };
+        });

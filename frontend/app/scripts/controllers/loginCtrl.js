@@ -6,8 +6,8 @@
  * @param {type} param2
  */
 angular.module('nodeAngularOauthApp')
-        .controller('LoginCtrl', function ($scope, loginHandler) {
+        .controller('LoginCtrl', function ($scope, loginService) {
             $scope.submit = function () {
-              loginHandler.login($scope.username, $scope.password);
+                loginService.login( $scope.username, $scope.password );
             };
         });
